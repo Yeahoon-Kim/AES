@@ -1,10 +1,10 @@
 #include "aes.h"
 
-//ÇĞ¹ø_ÀÌ¸§
-char SUBMISSION_INFO[256] = "2020330006_±è¿¹ÈÆ";
+//í•™ë²ˆ_ì´ë¦„
+char SUBMISSION_INFO[256] = "0000000000_000";
 
 
-//°ü·Ã µ¥ÀÌÅÍ Å¸ÀÔ Á¤ÀÇ ³»¿ª
+//ê´€ë ¨ ë°ì´í„° íƒ€ì… ì •ì˜ ë‚´ì—­
 //128-bit block
 //typedef uint8_t AES_STATE_t[16];
 //128-bit masterkey
@@ -141,9 +141,9 @@ uint32_t InvSubWord(uint32_t Key)
 }
 
 /*
-* SubBytes ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* SubBytes í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void SubBytes(AES_STATE_t P)
 {
@@ -154,9 +154,9 @@ void SubBytes(AES_STATE_t P)
 }
 
 /*
-* InvSubBytes ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* InvSubBytes í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void InvSubBytes(AES_STATE_t P)
 {
@@ -167,9 +167,9 @@ void InvSubBytes(AES_STATE_t P)
 }
 
 /*
-* ShiftRows ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* ShiftRows í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void ShiftRows(AES_STATE_t P)
 {
@@ -190,9 +190,9 @@ void ShiftRows(AES_STATE_t P)
 }
 
 /*
-* InvShiftRows ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* InvShiftRows í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void InvShiftRows(AES_STATE_t P)
 {
@@ -213,9 +213,9 @@ void InvShiftRows(AES_STATE_t P)
 }
 
 /*
-* AddRoundKey ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®, ¶ó¿îµåÅ°)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* AddRoundKey í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸, ë¼ìš´ë“œí‚¤)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void AddRoundKey(AES_STATE_t P, AES_STATE_t roundKey)
 {
@@ -227,7 +227,7 @@ void AddRoundKey(AES_STATE_t P, AES_STATE_t roundKey)
 
 uint8_t multiplication(uint8_t B, uint8_t mix)
 {
-	// temp : °á°ú°ª
+	// temp : ê²°ê³¼ê°’
 	uint8_t temp = 0, temp2, flag;
 	// B * 0x01
 	if (mix & 0x01)
@@ -243,7 +243,7 @@ uint8_t multiplication(uint8_t B, uint8_t mix)
 		temp ^= temp2;
 	flag = temp2 & 0x80;
 
-	// MixColumnÀÌ »¡¸® ³¡³ªµµ·Ï ÇÏ´Â ¿ëµµ
+	// MixColumnì´ ë¹¨ë¦¬ ëë‚˜ë„ë¡ í•˜ëŠ” ìš©ë„
 	if (!(mix & 0x0c)) return temp;
 
 	// B * 0x04
@@ -265,9 +265,9 @@ uint8_t multiplication(uint8_t B, uint8_t mix)
 }
 
 /*
-* MixColumn ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* MixColumn í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void MixColumns(AES_STATE_t P)
 {
@@ -297,9 +297,9 @@ void MixColumns(AES_STATE_t P)
 }
 
 /*
-* InvMixColumn ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­(Æò¹®)ÀÇ ÁÖ¼Ò -> Á¶ÀÛ °¡´É
-* Ãâ·Â°ª : ÀÔ·Â°ªÀÇ Á÷Á¢ Á¶ÀÛ
+* InvMixColumn í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´(í‰ë¬¸)ì˜ ì£¼ì†Œ -> ì¡°ì‘ ê°€ëŠ¥
+* ì¶œë ¥ê°’ : ì…ë ¥ê°’ì˜ ì§ì ‘ ì¡°ì‘
 */
 void InvMixColumns(AES_STATE_t P)
 {
@@ -328,10 +328,10 @@ void InvMixColumns(AES_STATE_t P)
 	}
 }
 
-/* Å° È®Àå ÇÔ¼ö
-* ÀÔ·Â°ª : char[16] ¹è¿­
-* Áß°£°ª : uint[11][4] ¹è¿­, ÇÑ ÇàÀÌ ÇÑ ¶ó¿îµå¸¦ ÀÇ¹Ì
-* °á°ú°ª : Àü¿ªº¯¼ö char[15][16]¿¡ ÀúÀå -> ¿Ï¼ºµÈ ¶ó¿îµå Å°
+/* í‚¤ í™•ì¥ í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[16] ë°°ì—´
+* ì¤‘ê°„ê°’ : uint[11][4] ë°°ì—´, í•œ í–‰ì´ í•œ ë¼ìš´ë“œë¥¼ ì˜ë¯¸
+* ê²°ê³¼ê°’ : ì „ì—­ë³€ìˆ˜ char[15][16]ì— ì €ì¥ -> ì™„ì„±ëœ ë¼ìš´ë“œ í‚¤
 */
 void keyRounder128(AES128_KEY_t K128)
 {
@@ -430,17 +430,17 @@ void AES128_dec(AES_STATE_t P, AES_STATE_t C, AES128_KEY_t K128)
 	}
 }
 
-//°ü·Ã µ¥ÀÌÅÍ Å¸ÀÔ Á¤ÀÇ ³»¿ª
+//ê´€ë ¨ ë°ì´í„° íƒ€ì… ì •ì˜ ë‚´ì—­
 //128-bit block
 //typedef uint8_t AES_STATE_t[16];
 //192-bit masterkey
 //typedef uint8_t AES192_KEY_t[24];
 
 
-/* Å° È®Àå ÇÔ¼ö
-* ÀÔ·Â°ª : char[24] ¹è¿­
-* Áß°£°ª : uint[9][6] ¹è¿­, ÇÑ ÇàÀÌ ÇÑ ¶ó¿îµå¸¦ ÀÇ¹Ì
-* °á°ú°ª : Àü¿ªº¯¼ö char[15][16]¿¡ ÀúÀå -> ¿Ï¼ºµÈ ¶ó¿îµå Å°
+/* í‚¤ í™•ì¥ í•¨ìˆ˜
+* ì…ë ¥ê°’ : char[24] ë°°ì—´
+* ì¤‘ê°„ê°’ : uint[9][6] ë°°ì—´, í•œ í–‰ì´ í•œ ë¼ìš´ë“œë¥¼ ì˜ë¯¸
+* ê²°ê³¼ê°’ : ì „ì—­ë³€ìˆ˜ char[15][16]ì— ì €ì¥ -> ì™„ì„±ëœ ë¼ìš´ë“œ í‚¤
 */
 void keyRounder192(AES192_KEY_t K192)
 {
@@ -555,7 +555,7 @@ void AES192_dec(AES_STATE_t P, AES_STATE_t C, AES192_KEY_t K192)
 	}
 }
 
-//°ü·Ã µ¥ÀÌÅÍ Å¸ÀÔ Á¤ÀÇ ³»¿ª
+//ê´€ë ¨ ë°ì´í„° íƒ€ì… ì •ì˜ ë‚´ì—­
 //128-bit block
 //typedef uint8_t AES_STATE_t[16];
 //256-bit masterkey
